@@ -25,6 +25,7 @@ import "./index.css";
 import Info from "./pages/Info";
 import Gps from "./pages/Gps";
 import Compass from "./pages/Compass";
+import Image from "./pages/Image";
 
 const App: React.FC = () => {
 	return (
@@ -44,6 +45,9 @@ const App: React.FC = () => {
 						</Route>
 						<Route path="/compass">
 							<Compass />
+						</Route>
+						<Route path="/image">
+							<Image />
 						</Route>
 					</IonRouterOutlet>
 				</IonSplitPane>

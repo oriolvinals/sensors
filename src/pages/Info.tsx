@@ -8,10 +8,12 @@ import {
 	IonToolbar,
 } from "@ionic/react";
 import { Device } from "@capacitor/device";
+import { Network } from "@capacitor/network";
 import { useEffect, useState } from "react";
 
 const Info = () => {
 	const [info, setInfo] = useState<any>();
+	const [networkStatus, setNetworkStatus] = useState<any>();
 
 	useEffect(() => {
 		const getDeviceInfo = async () => {
@@ -20,7 +22,14 @@ const Info = () => {
 			setInfo(info);
 		};
 
+		const logCurrentNetworkStatus = async () => {
+			const status = await Network.getStatus();
+			console.log(status);
+			setNetworkStatus(status);
+		};
+
 		getDeviceInfo();
+		logCurrentNetworkStatus();
 	}, []);
 	return (
 		<IonPage>
@@ -41,6 +50,14 @@ const Info = () => {
 				</IonHeader>
 				{info && (
 					<div className="p-4">
+						<p className="py-2">
+							<span className="p-2 bg-gray-600 rounded-md text-white mr-2">
+								Network Status
+							</span>
+							{networkStatus.connected
+								? networkStatus.connectionType
+								: "No connection"}
+						</p>
 						<p className="py-2">
 							<span className="p-2 bg-gray-600 rounded-md text-white mr-2">
 								Manufacturer
