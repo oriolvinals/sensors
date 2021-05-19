@@ -15,7 +15,6 @@ import {
 	cameraOutline,
 	informationOutline,
 	locateOutline,
-	navigateOutline,
 	textOutline,
 } from "ionicons/icons";
 import "./Menu.css";
@@ -39,12 +38,6 @@ const appPages: AppPage[] = [
 		url: "/gps",
 		iosIcon: locateOutline,
 		mdIcon: locateOutline,
-	},
-	{
-		title: "Compass",
-		url: "/compass",
-		iosIcon: navigateOutline,
-		mdIcon: navigateOutline,
 	},
 	{
 		title: "Image",

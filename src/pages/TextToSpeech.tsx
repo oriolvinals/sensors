@@ -28,6 +28,7 @@ const Tts = () => {
 			volume: 1.0,
 			category: "ambient",
 		});
+		setText("");
 	};
 	return (
 		<IonPage>
