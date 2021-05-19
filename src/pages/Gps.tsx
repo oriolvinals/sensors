@@ -7,9 +7,8 @@ import {
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-import { Plugins } from "@capacitor/core";
+import { Geolocation } from "@capacitor/geolocation";
 import { useEffect, useState } from "react";
-const { Geolocation } = Plugins;
 
 const Gps = () => {
 	const [gpsInfo, setGpsInfo] = useState<any>();

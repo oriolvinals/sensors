@@ -7,16 +7,16 @@ import {
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-import { DeviceInfo, Plugins } from "@capacitor/core";
+import { Device } from "@capacitor/device";
 import { useEffect, useState } from "react";
-const { Device } = Plugins;
 
 const Info = () => {
-	const [info, setInfo] = useState<DeviceInfo>();
+	const [info, setInfo] = useState<any>();
 
 	useEffect(() => {
 		const getDeviceInfo = async () => {
 			const info = await Device.getInfo();
+			console.log(info);
 			setInfo(info);
 		};
 
@@ -70,6 +70,18 @@ const Info = () => {
 								Platorm
 							</span>
 							{info.platform}
+						</p>
+						<p className="py-2">
+							<span className="p-2 bg-gray-600 rounded-md text-white mr-2">
+								Web version
+							</span>
+							{info.webViewVersion}
+						</p>
+						<p className="py-2">
+							<span className="p-2 bg-gray-600 rounded-md text-white mr-2">
+								Virtual?
+							</span>
+							{info.isVirtual ? "Yes" : "No"}
 						</p>
 					</div>
 				)}

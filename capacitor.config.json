@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "gmav.sensors",
   "appName": "sensors",
   "bundledWebRuntime": false,
   "npmClient": "npm",
