@@ -7,21 +7,16 @@ import {
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-import { Plugins } from "@capacitor/core";
-import { useEffect, useState } from "react";
-const { Geolocation } = Plugins;
+import { Motion } from "@capacitor/motion";
+import { useState } from "react";
 
 const Compass = () => {
-	const [heading, setHeading] = useState<any>();
+	const [heading, setHeading] = useState<Array<number>>([]);
 
-	useEffect(() => {
-		const getDeviceGps = async () => {
-			const location = await Geolocation.getCurrentPosition();
-			setHeading(location.coords.heading);
-		};
+	Motion.addListener("orientation", (event) => {
+		setHeading([event.alpha, event.beta, event.gamma]);
+	});
 
-		getDeviceGps();
-	}, []);
 	return (
 		<IonPage>
 			<IonHeader>
@@ -39,12 +34,13 @@ const Compass = () => {
 						<IonTitle size="large">Compass</IonTitle>
 					</IonToolbar>
 				</IonHeader>
-				{!heading && (
+				{heading.length === 0 && (
 					<div className="p-4 flex justify-center items-center w-full h-full absolute top-0">
 						<img src="/assets/compass.png" alt="compass" />
+						{heading}
 					</div>
 				)}
-				{heading && (
+				{!heading && (
 					<div className="p-4 text-center">
 						Can't access to heading value
 					</div>
