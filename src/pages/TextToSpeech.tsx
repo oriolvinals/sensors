@@ -20,15 +20,16 @@ const Tts = () => {
 	const [text, setText] = useState<string>("");
 
 	const speak = async () => {
+		const tts = text;
+		setText("");
 		await TextToSpeech.speak({
-			text: text,
+			text: tts,
 			lang: "en_US",
 			rate: 1.0,
 			pitch: 1.0,
 			volume: 1.0,
 			category: "ambient",
 		});
-		setText("");
 	};
 	return (
 		<IonPage>
