@@ -36,8 +36,13 @@ const Compass = () => {
 				</IonHeader>
 				{heading.length !== 0 && (
 					<div className="p-4 flex justify-center items-center w-full h-full absolute top-0">
-						<img src="/assets/compass.png" alt="compass" />
-						{heading}
+						<img
+							src="/assets/compass.png"
+							alt="compass"
+							style={{
+								transform: "rotate(" + heading[0] + "deg)",
+							}}
+						/>
 					</div>
 				)}
 				{!heading && (
