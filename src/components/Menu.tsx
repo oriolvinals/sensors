@@ -16,6 +16,7 @@ import {
 	informationOutline,
 	locateOutline,
 	navigateOutline,
+	textOutline,
 } from "ionicons/icons";
 import "./Menu.css";
 
@@ -50,6 +51,12 @@ const appPages: AppPage[] = [
 		url: "/image",
 		iosIcon: cameraOutline,
 		mdIcon: cameraOutline,
+	},
+	{
+		title: "Text to Speech",
+		url: "/tts",
+		iosIcon: textOutline,
+		mdIcon: textOutline,
 	},
 ];
 

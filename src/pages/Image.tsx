@@ -15,7 +15,7 @@ import { cameraReverseOutline } from "ionicons/icons";
 import { useState } from "react";
 
 const Image = () => {
-	const [src, setSrc] = useState<any>();
+	const [src, setSrc] = useState<any>("/assets/noimage.png");
 	const takePicture = async () => {
 		const image = await Camera.getPhoto({
 			quality: 90,

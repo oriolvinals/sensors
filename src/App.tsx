@@ -26,6 +26,7 @@ import Info from "./pages/Info";
 import Gps from "./pages/Gps";
 import Compass from "./pages/Compass";
 import Image from "./pages/Image";
+import Tts from "./pages/TextToSpeech";
 
 const App: React.FC = () => {
 	return (
@@ -48,6 +49,9 @@ const App: React.FC = () => {
 						</Route>
 						<Route path="/image">
 							<Image />
+						</Route>
+						<Route path="/tts">
+							<Tts />
 						</Route>
 					</IonRouterOutlet>
 				</IonSplitPane>

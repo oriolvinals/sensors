@@ -54,8 +54,8 @@ const Info = () => {
 							<span className="p-2 bg-gray-600 rounded-md text-white mr-2">
 								Network Status
 							</span>
-							{networkStatus.connected
-								? networkStatus.connectionType
+							{networkStatus?.connected
+								? networkStatus?.connectionType
 								: "No connection"}
 						</p>
 						<p className="py-2">
