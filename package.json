@@ -5,6 +5,7 @@
 	"dependencies": {
 		"@capacitor/core": "^3.0.0-rc.4",
 		"@capacitor/device": "^0.6.2",
+		"@capacitor/geolocation": "^0.4.7",
 		"@craco/craco": "^6.1.2",
 		"@ionic/react": "^5.5.0",
 		"@ionic/react-router": "^5.5.0",
